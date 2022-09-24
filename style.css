@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    rgba(246, 99, 214, 0.667),
+    #9761ee,
+    #89d1f3
+  );
+}
+.container {
+  width: 300px;
+  height: 200px;
+  background-color: transparent;
+
+  border: 1px solid gray;
+  perspective: 1000px;
+  margin-top: 170px;
+}
+
+.inner-content {
+  position: relative;
+
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.container:hover .inner-content {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+}
+
+.front {
+  color: black;
+  background-color: blueviolet;
+}
+
+.back {
+  color: black;
+  background-color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  transform: rotateY(180deg);
+}
